@@ -1,0 +1,73 @@
+% Author Name: Joseph Calabria
+% Email: jcalab13@gmail.com
+% Created On: 09/20/2024
+% Updated On: 09/27/2024
+% Update By: Joseph
+% All rights are reserved - MIT License
+% Title: assignment1
+
+% variable operations 
+radius = 5;
+
+area = 78.540;
+
+circumference = 31.416;
+%print values
+fprintf('radius equals %g \n', radius);
+fprintf('area equals %g \n', area);
+fprintf('circumference equals %g \n', circumference);
+
+% Temp. Converter
+temperature = input('Temperature in celsius');
+fahrenheit = (temperature * 9/5) + 32;
+%print results
+fprintf('%g degrees fahrenheit \n', fahrenheit);
+if fahrenheit > 100
+    disp("It's a hot day!");
+else 
+    disp("It's nice outside")
+end
+
+% Grocery Calc.
+egg_p = 8;
+milk_p = 5;
+bread_p = 2;
+bacon_p = 10;
+cheese_p = 7;
+% quantity multiplied by price per
+eggs = input('How many dozens of eggs \n') * egg_p;
+milk = input('How many cartons of milk \n') * milk_p;
+bread = input('How many loafs of bread \n') * bread_p;
+bacon = input('How many packs of bacon \n') * bacon_p;
+cheese = input('How many pounds of cheee \n') * cheese_p;
+% sum of individual prices
+cost = eggs + milk + bread + bacon + cheese;
+
+if cost > 50
+    total = cost - (cost * 0.1);
+else cost < 50;
+    total = cost
+end
+fprintf('%g dollars \n', total)
+
+% Number Guessing
+number = randi(100);
+guessTimes = 0;
+
+cnd = true;
+while cnd
+    guess = input('Guess the number');
+    guessTimes = guessTimes + 1;
+    if guess == number
+        fprintf('You got it right! \n');
+        break;
+    else
+        fprintf('Try again \n')
+    end
+    if guess < number
+        fprintf('Too low! \n');
+    else guess > number;
+        fprintf('Too high! \n');
+    end
+end
+fprintf('It took you %g guesses', guessTimes)
